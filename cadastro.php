@@ -243,3 +243,31 @@
         <input type="submit" name="logar" id="logar" value="<?php if ($acao !=""){echo $acao;}else{echo"Inserir";} ?>" class="botao">
     </form>    
 </div>
+<!------------Requisicao para preencher o endereco-->!>
+<Script>
+       function retornaEndereco(){
+                $("txt_cep").focusout(function(){
+                        var cep = $("#txt_cep").val();
+                        cep = cep.replace("-","");
+                        var urlStr = "https://viacep.com.br/ws/"+ cep +"/json/";
+                        $.ajax({
+                                url:urlStr,
+                                type:"get",
+                                dataType:"json",
+                                success : function(data){
+                                        console.log(data);
+                                        $("txt_cidade").val(data.localidade);
+                                        $("txt_uf").val(data.uf);
+                                        $("txt_bairro").val(data.bairro);
+                                        $("txt_logradouro").val(data.logradouro);
+                                },
+                                error:function(erro){
+                                        console.log(erro);
+
+
+                                }
+                        });
+                });
+        };
+
+</Script>
