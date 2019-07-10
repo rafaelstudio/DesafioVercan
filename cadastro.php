@@ -4,7 +4,7 @@
         $acao   = $_GET["acao"];
         $id     = $_GET["id"];
     
-      if ($acao =="inserir" || $acao =="alterar" || $acao =="excluir"){
+      if ($acao =="Cadastrar" || $acao =="alterar" || $acao =="excluir"){
     
         $sql    = "SELECT * FROM fornecedores WHERE id_fornecedores = '$id'";
         $qry    = mysql_query($sql);
@@ -173,12 +173,12 @@
 
                 <label>            
                         <spam>CEP</spam></br> 
-                        <input type="text" name="txt_cep" id="txt_cep" value="<?php echo $linha['cep']; ?>">
+                        <input type="text" name="cep" id="cep" value="<?php echo $linha['cep']; ?>">
                 </label>
 
                 <label>            
                         <spam>Logradouro</spam></br> 
-                        <input type="text" name="txt_logradouro" id="txt_logradouro" value="<?php echo $linha['logradouro']; ?>">
+                        <input type="text" name="rua" id="rua" value="<?php echo $linha['logradouro']; ?>">
                 </label>
 
                 <label>            
@@ -193,7 +193,7 @@
 
                 <label>            
                         <spam>Bairro</spam></br> 
-                        <input type="text" name="txt_bairro" id="txt_bairro" value="<?php echo $linha['bairro']; ?>">
+                        <input type="text" name="bairro" id="bairro" value="<?php echo $linha['bairro']; ?>">
                 </label>
 
                 <label>            
@@ -239,38 +239,82 @@
            
         </fieldset>
         <input type="hidden" name="id" value="<?php echo $id;?>">
-        <input type="hidden" name="acao" value="<?php if ($acao !=""){echo $acao;}else{echo"Inserir";} ?>">
-        <input type="submit" name="logar" id="logar" value="<?php if ($acao !=""){echo $acao;}else{echo"Inserir";} ?>" class="botao">
+        <input type="hidden" name="acao" value="<?php if ($acao !=""){echo $acao;}else{echo"Cadastrar";} ?>">
+        <input type="submit" name="logar" id="logar" value="<?php if ($acao !=""){echo $acao;}else{echo"Cadastrar";} ?>" class="botao">
     </form>    
 </div>
 <!------------Requisicao para preencher o endereco-->!>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
 <Script>
+        $(document).ready(function() {
 
-$(document).ready(function(){
-                $("txt_cep").focusout(function(){
-                        var cep = $("#txt_cep").val();
-                        cep = cep.replace("-","");
-                        var urlStr = "https://viacep.com.br/ws/"+ cep +"/json/";
-                        $.ajax({
-                                url:urlStr,
-                                type:"get",
-                                dataType:"json",
-                                success : function(data){
-                                        console.log(data);
-                                        $("txt_cidade").val(data.localidade);
-                                        $("txt_uf").val(data.uf);
-                                        $("txt_bairro").val(data.bairro);
-                                        $("txt_logradouro").val(data.logradouro);
-                                },
-                                error:function(erro){
-                                        console.log(erro);
+function limpa_formulário_cep() {
+    // Limpa valores do formulário de cep.
+    $("#rua").val("");
+    $("#bairro").val("");
+    $("#cidade").val("");
+    $("#uf").val("");
+    $("#ibge").val("");
+}
+
+//Quando o campo cep perde o foco.
+$("#cep").blur(function() {
+
+    //Nova variável "cep" somente com dígitos.
+    var cep = $(this).val().replace(/\D/g, '');
+
+    //Verifica se campo cep possui valor informado.
+    if (cep != "") {
+
+        //Expressão regular para validar o CEP.
+        var validacep = /^[0-9]{8}$/;
+
+        //Valida o formato do CEP.
+        if(validacep.test(cep)) {
+
+            //Preenche os campos com "..." enquanto consulta webservice.
+            $("#rua").val("...");
+            $("#bairro").val("...");
+            $("#cidade").val("...");
+            $("#uf").val("...");
+            $("#ibge").val("...");
+
+            //Consulta o webservice viacep.com.br/
+            $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+
+                if (!("erro" in dados)) {
+                    //Atualiza os campos com os valores da consulta.
+                    $("#rua").val(dados.logradouro);
+                    $("#bairro").val(dados.bairro);
+                    $("#cidade").val(dados.localidade);
+                    $("#uf").val(dados.uf);
+                } //end if.
+                else {
+                    //CEP pesquisado não foi encontrado.
+                    limpa_formulário_cep();
+                    alert("CEP não encontrado.");
+                }
+            });
+        } //end if.
+        else {
+            //cep é inválido.
+            limpa_formulário_cep();
+            alert("Formato de CEP inválido.");
+        }
+    } //end if.
+    else {
+        //cep sem valor, limpa formulário.
+        limpa_formulário_cep();
+    }
+});
+});
 
 
-                                }
-                        });
-                });
-        });
+
+////////////////////////////////////////////////////////////////////////////////
         var estados = [];
 
 function loadEstados(element) {
