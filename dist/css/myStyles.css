@@ -1,0 +1,31 @@
+.forn_body{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+
+#box-Cadastro{
+    padding: 10px;
+    width: 100%;
+    height: auto;
+}
+
+#box-Cadastro label{
+    margin: 10px;
+}
+
+
+#box-Cadastro fieldset {
+    width: 850px;
+    background-color: white;
+    margin-bottom: 15px;
+    padding-top: 10px;    
+    padding-bottom: 10px;
+    font-size: 10px;
+}
+
+
+#txt_nome,#txt_fantasia,#txt_razao{
+    width: 300px;
+}

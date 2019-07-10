@@ -1,0 +1,53 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#formulariologin {
+	width: 220px;
+	margin: 200px auto;
+	border: 2px solid #ccc;
+}
+
+
+#formulariologin fieldset{
+	border: 0;
+	padding: 2 14px 10px 14px;
+}
+
+
+#formulariologin legend {
+	font: 18px Tahoma, Geneva, sans-serif;
+	color: #069;
+	font-weight: bold;
+	padding: 10px 0;
+	margin: 2px;
+}
+
+#formulariologin label{
+	display: block;
+	font: 16px;
+	color: #069;
+	margin: 2px;
+}
+
+#formulariologin span{
+	display: block;
+	margin: 2px;
+}
+
+#formulariologin input{
+	padding: 3px;
+	width: 180px;
+	border: 1px solid #069;
+	margin-top: 2px;
+	font: 16px Tahoma, Genevam, sans-serif;
+	font-weight: bold;
+}
+
+#formulariologin .botao{
+	width: 120px;
+	display: block;
+	margin: 10px auto;
+	cursor: pointer;
+}
