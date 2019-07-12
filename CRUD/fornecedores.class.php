@@ -1,5 +1,5 @@
 <?php
-
+//ESTE NÂO ESTA FUNCIONANDO, IR ATE 'OP_FORCENCEDORES'
     class Fornecedores{
 
         private $pdo;
@@ -8,9 +8,7 @@
             $this->pdo = new PDO("mysql:dbname=desafiovercan;host=localhost","root","");
         }
 
-        public function adicionar(
-            
-            $id_fornecedores,
+        public function adicionar(   
             $cnpj,
             $razaosocial = '',
             $nomefantasia= '',
@@ -40,7 +38,7 @@
             $uf= '',
             $cidade= '',
             $condominio= '',
-            $observacao= '',
+            $observacao= ''
             //$cpf= '',
             //$nome= '',
            // $apelido= ''
@@ -51,8 +49,6 @@
                 $sql = "INSERT INTO fornecedores (
                     cnpj,razaosocial,nomefantasia,indicador,
                     inscricaoestadual,inscricaomunicipal,situacao,recolhimento,ativo,telefone,tipot,email,tipoe,
-                    nomea,empresa,cargo,telefonea,tipota,emaila,tipoea,cep,logradouro,
-                    numero,complemento,bairro,pontoreferencia,uf,cidade,condominio,observacao
 
                 ) VALUES (
                     :cnpj,:razaosocial,:nomefantasia,:indicador,
@@ -69,7 +65,17 @@
                 $sql->bindValue(':inscricaomunicipal',$inscricaomunicipal);
                 $sql->bindValue(':sitsituacao',$sitsituacao);
                 $sql->bindValue(':recolhimento',$recolhimento);
-                $sql->bindValue(':ativo',$ativo);
+                $sql->bindValue(':telefone',$telefone);
+                $sql->bindValue(':email',$email);
+                $sql->bindValue(':tipoe',$tipoe);
+                $sql->bindValue(':numero',$numero);
+                $sql->bindValue(':complemento',$complemento);
+                $sql->bindValue(':bairro',$bairro);
+                $sql->bindValue(':pontoreferencia',$pontoreferencia);
+                $sql->bindValue(':uf',$uf);
+                $sql->bindValue(':cidade',$cidade);
+                $sql->bindValue(':condominio',$condominio);
+                $sql->bindValue(':observacao',$observacao);
                 $sql->execute();
 
             }else{
@@ -79,27 +85,23 @@
 
         }
 
-        public function dadosJuridico($razaosocial,$nomefantasia,$cnpj,$ativo){
-            $sql  = "SELECT razaosocial,nomefantasia,cnpj,ativo FROM fornecedores WHERE id_fornecedores= :id_fornecedores";
+        public function getInfo($id_fornecedores){
+            $sql = "SELECT * FROM fornecedores WHERE id_fornecedores = :id_fornecedores";
             $sql = $this->pdo->prepare($sql);
-            $sql->bindValue(':razaosocial',$razaosocial);
-            $sql->bindValue(':nomefantasia',$nomefantasia);
-            $sql->bindValue(':cnpj',$cnpj);
-            $sql->bindValue(':ativo',$ativo);
+            $sql->bindValue(':id_fornecedores',$id_fornecedores);
             $sql->execute();
 
             if($sql->rowCount() > 0){
-                $info = $sql->fetch();
-
-                return $info['razaosocial'];
+                return $sql->fetch();
             }else{
-                return '';
+                return array();
             }
         }
 
+       
         public function getAll(){
                 $sql = "SELECT * FROM fornecedores";
-                $sql->$pdo->query($sql);
+                $sql =$this->pdo->query($sql);
 
                 if($sql->rowCount() > 0){
                     return $sql->fetchAll();
@@ -122,17 +124,12 @@
             }
         }
 
-        public function excluir($cnpj){
-            if($this->existeCnpj($cnpj)){
-                $sql = "DELETE * FROM fornecedores WHERE cnpj = :cnpj";
-                $sql= $this->pdo->prepare($sql);
-                $sql->bindValue('cnpj',$cnpj);
-                $sql->execute();
-
-                return true;
-            }else{
-                return false;
-            }
+        public function excluir($id_fornecedores){
+            
+                $sql = "DELETE FROM fornecedores WHERE id_fornecedores = :id_fornecedores";
+                $sql = $this->pdo->prepare($sql);
+                $sql->bindValue(':id_fornecedores',$id_fornecedores);
+                $sql->execute();                
         }
 
 

@@ -1,6 +1,7 @@
 <?php
-     include "CRUD/config.php";
-
+     require 'CRUD/config.php';
+     include 'CRUD/fornecedores.class.php';
+     $fornecedor = new Fornecedores;
 
 ?>
 
@@ -20,26 +21,27 @@
             <td colspan="2" width="10%" height="20">Acao</td>
         </tr>
 
-        <?php 
-						$sql = "SELECT  * FROM fornecedores";
-						$qry = mysql_query($sql);
+        <?php
+            $lista = $fornecedor->getAll();
+            foreach($lista as $item):
+        
+        
+        ?>
 
-						while ($linha = mysql_fetch_array($qry)) {
-						
-
-		?>
 
         <tr bgcolor="#fff">
-                <td ><?php echo $linha[razaosocial]?></td>
-                <td><?php echo $linha[nomefantasia]?></td>
-                <td><?php echo $linha[cnpj]?></td>
-                <td><?php echo $linha[ativo]?></td>
-                <td><a href="index.php?link=10&acao=Alterar&id=<?php echo $linha[razaosocial]?>">    Editar  </a></td>
-                <td><a href="index.php?link=10&acao=Excluir&id=<?php echo $linha[razaosocial]?>">    Excluir </a></td>
+                <td ><?php echo $item['razaosocial']?></td>
+                <td><?php echo $item['nomefantasia']?></td>
+                <td><?php echo $item['cnpj']?></td>
+                <td><?php echo $item['situacao']?></td>
+                <td>
+                     <a href="index.php?link=11&id_fornecedores=<?php echo $item['id_fornecedores'];?>">    Editar </a>
+                     <a href="CRUD/excluir.php?id_fornecedores=<?php echo $item['id_fornecedores'];?>">    Excluir </a>
+                </td>
             
         </tr>
 
-        <?php }  ?>
+            <?php endforeach; ?>
 
         <tr bgcolor="#993300">
                 <td width="30%" height="20">Razao Social/Nome</td>

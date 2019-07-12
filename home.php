@@ -19,10 +19,10 @@
 				
 				<div class="opcoesAdm">
 					<div class="escolhas"> 
-						<a href="principal.php?link=2">
+						
 						<img src="imagens/produtoshome.png" width="250px" height="200px">
 
-						</a>
+						
 
 						
  													Tela inicial

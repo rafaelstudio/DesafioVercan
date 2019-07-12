@@ -95,7 +95,7 @@
               <i class="fa fa-bell-o"></i>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">Nãp ha Notificações</li>
+              <li class="header">Não ha Notificações</li>
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
@@ -197,6 +197,7 @@
 			 <?php 
 				$link = $_GET["link"];
         $pag[10] = "cadastro.php";
+        $pag[11] = "CRUD/editar.php";
         $pag[2] = "home.php";
         $pag[3] = "fornecedores.php";
 
