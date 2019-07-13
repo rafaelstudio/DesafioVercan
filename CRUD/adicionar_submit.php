@@ -33,6 +33,7 @@ $fornecedor = new Fornecedores();
     $cidade             = $_POST['cidade'];
     $condominio         = $_POST['condominio'];
     $observacao         = $_POST['observacao'];
+    $observacao         = $_POST['observacao'];
 
     $fornecedor->adicionar($cnpj,$razaosocial,$nomefantasia,$indicador,$inscricaoestadual,
     $inscricaomunicipal,$situacao, $recolhimento ,$ativo,$telefone,$tipot,$email,$tipoe,$nomea,$empresa,$cargo,

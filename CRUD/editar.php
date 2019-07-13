@@ -29,7 +29,7 @@
                  <input type="hidden" name="id_fornecedores" id="id_fornecedores" value="<?php echo $info['id_fornecedores'];?>" >
                 <label>            
                     <spam>CNPJ </spam></br> 
-                    <input type="text" name="txt_cnpj" id="txt_cnpj" value="<?php echo $info['cnpj'];?>" >
+                    <input type="text" name="cnpj" id="cnpj" value="<?php echo $info['cnpj'];?>" >
                 </label>
 
                 <label>            
@@ -39,37 +39,38 @@
 
                 <label>            
                         <spam>Nome Fantasia</spam></br> 
-                        <input type="text" name="txt_nomefantasia" id="txt_nomefantasia" value="<?php echo $info['nomefantasia'];?>" >
+                        <input type="text" name="nomefantasia" id="nomefantasia" value="<?php echo $info['nomefantasia'];?>" >
                 </label>
 
                 <label>            
                         <spam>Indicador de Inscrição Estadual</spam></br> 
-                        <select  name="txt_indicador" id="txt_indicador" value="<?php echo $info['indicador'];?>"  >
-                                <option value="Contribuinte">Contribuinte</option>
-                                <option value="isento">Contribuinte Isento</option>
-                                <option value="nao">Não Contribuinte</option>
+                        <select  name="indicador" id="indicador">
+                                <option ><?php echo $info['indicador'];?></option>
+                                <option >Contribuinte</option>
+                                <option >Contribuinte Isento</option>
+                                <option >Não Contribuinte</option>
                         </select>
                 </label>
 
                 <label>            
                         <spam>Inscrição Estadual</spam></br> 
-                        <input type="" name="txt_inscricaoestadual " id="txt_inscricaoestadual " value="<?php echo $info['inscricaoestadual'];?>" >
+                        <input type="text" name="inscricaoestadual" id="inscricaoestadual" value="<?php echo $info['inscricaoestadual'];?>" >
                 </label>
 
                 <label>            
                         <spam>Inscrição Municipal</spam></br> 
-                        <input type="text" name="txt_inscricaomunicipal" id="txt_inscricaomunicipal" value="<?php echo $info['inscricaomunicipal'];?>" >
+                        <input type="text" name="inscricaomunicipal" id="inscricaomunicipal" value="<?php echo $info['inscricaomunicipal'];?>" >
                 </label>
 
                 <label>            
                         <spam>Situação CNPJ</spam></br> 
-                        <input type="text" name="txt_situacao" id="txt_situacao" value="<?php echo $info['situacao'];?>" >
+                        <input type="text" name="situacao" id="situacao" value="<?php echo $info['situacao'];?>" >
                 </label>
 
                 <label>            
                         <spam>Recolhimento</spam></br> 
-                        <select  name="txt_recolhimento" id="txt_recolhimento" value="<?php echo $info['recolhimento'];?>" >
-                                <option value="Contribuinte">Selecione</option>
+                        <select  name="recolhimento" id="recolhimento"  >
+                                <option value="selecione"><?php echo $info['recolhimento'];?></option>
                                 <option value="recolher">A Recolher pelo Prestador</option>
                                 <option value="retido">Retido pelo Tomador</option>
                         </select>
@@ -77,10 +78,10 @@
 
                 <label>            
                         <spam>Ativo</spam></br> 
-                        <select  name="txt_Ativo" id="txt_Ativo"  >
+                        <select  name="ativo" id="ativo"  >
                                 <option value="selecione"><?php echo $info['ativo'];?></option>
-                                <option value="sim">Sim</option>
-                                <option value="nao">Não</option>
+                                <option >Sim</option>
+                                <option >Não</option>
                         </select>
                 </label>
 
@@ -93,12 +94,12 @@
 
             <label>            
                     <spam>Telefone</spam></br> 
-                    <input type="tel" name="txt_telefone" id="txt_telefone" value="<?php echo $info['telefone'];?>" >
+                    <input type="tel" name="telefone" id="telefone" value="<?php echo $info['telefone'];?>" >
             </label>
 
             <label>            
                     <spam>Tipo</spam></br> 
-                    <select  name="txt_tipot" id="txt_tipot"  >
+                    <select  name="tipot" id="tipot"  >
                             <option value="selecione"><?php echo $info['tipot'];?></option>
                             <option value="Residencial">Residencial</option>
                             <option value="Comercial">Comercial</option>
@@ -108,12 +109,12 @@
 
             <label>            
                     <spam>Email</spam></br> 
-                    <input type="email" name="txt_email" id="txt_email" value="<?php echo $info['email'];?>" >
+                    <input type="email" name="email" id="email" value="<?php echo $info['email'];?>" >
             </label>
 
             <label>            
                     <spam>Tipo</spam></br> 
-                    <select  name="txt_tipoe" id="txt_tipoe" >
+                    <select  name="tipoe" id="tipoe" >
                             <option value="selecione"><?php echo $info['tipoe'];?></option>
                             <option value="Residencial">Pessoal</option>
                             <option value="Comercial">Comercial</option>
@@ -129,27 +130,27 @@
              <legend>Contatos Adicionais </legend>
              <label>            
                     <spam>Nome</spam></br> 
-                    <input type="text" name="txt_nomea" id="txt_nomea" value="<?php echo $info['nomea'];?>" >
+                    <input type="text" name="nomea" id="nomea" value="<?php echo $info['nomea'];?>" >
             </label>
 
             <label>            
                     <spam>Empresa</spam></br> 
-                    <input type="text" name="txt_empresa" id="txt_empresa" value="<?php echo $info['empresa'];?>" >
+                    <input type="text" name="empresa" id="empresa" value="<?php echo $info['empresa'];?>" >
             </label>
 
             <label>            
                     <spam>Cargo</spam></br> 
-                    <input type="text" name="txt_cargo" id="txt_cargo" value="<?php echo $info['cargo'];?>" >
+                    <input type="text" name="cargo" id="cargo" value="<?php echo $info['cargo'];?>" >
             </label>
 
             <label>            
                     <spam>Telefone</spam></br> 
-                    <input type="tel" name="txt_telefonea" id="txt_telefonea" value="<?php echo $info['telefonea'];?>" >
+                    <input type="tel" name="telefonea" id="telefonea" value="<?php echo $info['telefonea'];?>" >
             </label>
 
             <label>            
                     <spam>Tipo</spam></br> 
-                    <select  name="txt_tipota" id="txt_tipota"  >
+                    <select  name="tipota" id="tipota"  >
                             <option value="selecione"><?php echo $info['tipota'];?></option>
                             <option value="Residencial">Residencial</option>
                             <option value="Comercial">Comercial</option>
@@ -159,12 +160,12 @@
 
             <label>            
                     <spam>Email</spam></br> 
-                    <input type="email" name="txt_emaila" id="txt_emaila" value="<?php echo $info['emaila'];?>" >
+                    <input type="email" name="emaila" id="emaila" value="<?php echo $info['emaila'];?>" >
             </label>
 
             <label>            
                     <spam>Tipo</spam></br> 
-                    <select  name="txt_tipoea" id="txt_tipoea" value="<?php echo $info['cnpj'];?>" >
+                    <select  name="tipoea" id="tipoea"  >
                             <option value="selecione"><?php echo $info['tipoea'];?></option>
                             <option value="Residencial">Pessoal</option>
                             <option value="Comercial">Comercial</option>
@@ -186,17 +187,17 @@
 
                 <label>            
                         <spam>Logradouro</spam></br> 
-                        <input type="text" name="rua" id="rua" value="<?php echo $info['logradouro'];?>" >
+                        <input type="text" name="rua" id="rua" value="<?php echo $info['rua'];?>" >
                 </label>
 
                 <label>            
                         <spam>Numero</spam></br> 
-                        <input type="text" name="txt_numero" id="txt_numero" value="<?php echo $info['numero'];?>" >
+                        <input type="text" name="numero" id="numero" value="<?php echo $info['numero'];?>" >
                 </label>
 
                 <label>            
                         <spam>Complemento</spam></br> 
-                        <input type="text" name="txt_complemento" id="txt_complemento" value="<?php echo $info['complemento'];?>" >
+                        <input type="text" name="complemento" id="complemento" value="<?php echo $info['complemento'];?>" >
                 </label>
 
                 <label>            
@@ -206,26 +207,26 @@
 
                 <label>            
                         <spam>Ponto de Referencia </spam></br> 
-                        <input type="text" name="txt_pontoreferencia" id="txt_pontoreferencia" value="<?php echo $info['pontoreferencia'];?>"  >
+                        <input type="text" name="pontoreferencia" id="pontoreferencia" value="<?php echo $info['pontoreferencia'];?>"  >
                 </label>
 
                 <label>            
                         <spam>UF</spam></br> 
-                        <select name="uf" id="uf" disabled data-target="#cidade" value="<?php echo $info['uf'];?>" >
+                        <select name="uf" id="uf"  data-target="#cidade" value="<?php echo $info['uf'];?>" >
                                         <option value="">Estado</option>
                                     </select>        
                 </label>
 
                 <label>            
                         <spam>Cidade</spam></br> 
-                        <select  name="txt_cidade" id="cidade" disabled value="<?php echo $info['cidade'];?>" >
+                        <select  name="cidade" id="cidade"  value="<?php echo $info['cidade'];?>" >
                                 <option value="selecione">Selecione</option>
                         </select>        
                 </label>
 
                 <label>            
                         <spam>Condominio</spam></br> 
-                        <select  name="txt_Condominio" id="txt_Condominio" >
+                        <select  name="condominio" id="condominio" >
                                 <option value="selecione"><?php echo $info['condominio'];?></option>
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
@@ -239,7 +240,7 @@
         <fieldset>
                 <legend>Observação</legend>
                 <label>            
-                        <input type="text" name="txt_observacao" id="txt_observacao" value="<?php echo $info['observacao'];?>" >
+                        <input type="text" name="observacao" id="observacao" value="<?php echo $info['observacao'];?>" >
                 </label>
                 
            
