@@ -8,7 +8,7 @@
 
         $info = $fornecedor->getInfo($id_fornecedores);
 
-        if(empty($info['cnpj'])){
+        if(empty($info['id_fornecedores'])){
             header("Location: ../index.php?link=3");
              exit;
         }
@@ -22,7 +22,7 @@
 
 ?>
 <div id="box-Cadastro">
-    <form id="frmFornecedores" name="frmFornecedores" method="POST" action="editar_submit.php">
+    <form id="frmFornecedores" name="frmFornecedores" method="POST" action="CRUD/editar_submit.php">
         <fieldset>
             <legend> Dados do Fornecedor </legend>
 
@@ -34,7 +34,7 @@
 
                 <label>            
                         <spam>Razão Social</spam></br> 
-                        <input type="text" name="txt_razaosocial" id="txt_razaosocial"  value="<?php echo $info['razaosocial'];?>" >
+                        <input type="text" name="razaosocial" id="razaosocial"  value="<?php echo $info['razaosocial'];?>" >
                 </label>
 
                 <label>            

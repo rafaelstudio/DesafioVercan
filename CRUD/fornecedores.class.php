@@ -110,19 +110,18 @@
                 }
         }
 
-        public function editar($razaosocial,$cnpj){
-            if($this->existeCnpj($cnpj)){
-                $sql = "UPDATE fornecedores SET rezaosocial = :razaosocial WHERE cnpj = :cnpj";
+        public function editar($razaosocial,$id_fornecedores){
+                if($this->existe($cnpj) == false ){
+                $sql = "UPDATE fornecedores SET rezaosocial = :razaosocial WHERE id_fornecedores = :id_fornecedores";
                 $sql = $this->pdo->prepare($sql);
-                $sql->bindValue(':rezaosocial',$razaosocial);
-                $sql->bindValue(':cnpj',$cnpj);
+                $sql->bindValue(':razaosocial',$razaosocial);
+                $sql->bindValue(':id_fornecedores',$id_fornecedores);
                 $sql->execute();
-
-                return true;
+                    return true;
             }else{
                 return false;
             }
-        }
+    }
 
         public function excluir($id_fornecedores){
             
