@@ -14,22 +14,22 @@
             <legend> Dados do Fornecedor </legend>
                 <label>            
                     <spam>CNPJ </spam></br> 
-                    <input type="text" name="txt_cnpj" id="txt_cnpj" >
+                    <input type="text" name="cnpj" id="cnpj" >
                 </label>
 
                 <label>            
                         <spam>Razão Social</spam></br> 
-                        <input type="text" name="txt_razaosocial" id="txt_razaosocial" >
+                        <input type="text" name="razaosocial" id="razaosocial" >
                 </label>
 
                 <label>            
                         <spam>Nome Fantasia</spam></br> 
-                        <input type="text" name="txt_nomefantasia" id="txt_nomefantasia" >
+                        <input type="text" name="nomefantasia" id="nomefantasia" >
                 </label>
 
                 <label>            
                         <spam>Indicador de Inscrição Estadual</spam></br> 
-                        <select  name="txt_indicador" id="txt_indicador"  >
+                        <select  name="indicador" id="indicador"  >
                                 <option value="Contribuinte">Contribuinte</option>
                                 <option value="isento">Contribuinte Isento</option>
                                 <option value="nao">Não Contribuinte</option>
@@ -38,22 +38,22 @@
 
                 <label>            
                         <spam>Inscrição Estadual</spam></br> 
-                        <input type="" name="txt_inscricaoestadual " id="txt_inscricaoestadual ">
+                        <input type="text" name="inscricaoestadual" id="inscricaoestadual ">
                 </label>
 
                 <label>            
                         <spam>Inscrição Municipal</spam></br> 
-                        <input type="text" name="txt_inscricaomunicipal" id="txt_inscricaomunicipal>
+                        <input type="text" name="inscricaomunicipal" id="inscricaomunicipal">
                 </label>
 
                 <label>            
                         <spam>Situação CNPJ</spam></br> 
-                        <input type="text" name="txt_situacao" id="txt_situacao" >
+                        <input type="text" name="situacao" id="situacao" >
                 </label>
 
                 <label>            
                         <spam>Recolhimento</spam></br> 
-                        <select  name="txt_recolhimento" id="txt_recolhimento" >
+                        <select  name="recolhimento" id="recolhimento" >
                                 <option value="Contribuinte">Selecione</option>
                                 <option value="recolher">A Recolher pelo Prestador</option>
                                 <option value="retido">Retido pelo Tomador</option>
@@ -62,7 +62,7 @@
 
                 <label>            
                         <spam>Ativo</spam></br> 
-                        <select  name="txt_Ativo" id="txt_Ativo" >
+                        <select  name="ativo" id="ativo" >
                                 <option value="Contribuinte">Selecione</option>
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
@@ -78,12 +78,12 @@
 
             <label>            
                     <spam>Telefone</spam></br> 
-                    <input type="tel" name="txt_telefone" id="txt_telefone" >
+                    <input type="tel" name="telefone" id="telefone" >
             </label>
 
             <label>            
                     <spam>Tipo</spam></br> 
-                    <select  name="txt_tipot" id="txt_tipot">
+                    <select  name="tipot" id="tipot">
                             <option value="selecione">Selecione</option>
                             <option value="Residencial">Residencial</option>
                             <option value="Comercial">Comercial</option>
@@ -93,12 +93,12 @@
 
             <label>            
                     <spam>Email</spam></br> 
-                    <input type="email" name="txt_email" id="txt_email">
+                    <input type="email" name="email" id="email">
             </label>
 
             <label>            
                     <spam>Tipo</spam></br> 
-                    <select  name="txt_tipoe" id="txt_tipoe">
+                    <select  name="tipoe" id="tipoe">
                             <option value="selecione">Selecione</option>
                             <option value="Residencial">Pessoal</option>
                             <option value="Comercial">Comercial</option>
@@ -114,27 +114,27 @@
              <legend>Contatos Adicionais </legend>
              <label>            
                     <spam>Nome</spam></br> 
-                    <input type="text" name="txt_nomea" id="txt_nomea" >
+                    <input type="text" name="nomea" id="nomea" >
             </label>
 
             <label>            
                     <spam>Empresa</spam></br> 
-                    <input type="text" name="txt_empresa" id="txt_empresa">
+                    <input type="text" name="empresa" id="empresa">
             </label>
 
             <label>            
                     <spam>Cargo</spam></br> 
-                    <input type="text" name="txt_cargo" id="txt_cargo" >
+                    <input type="text" name="cargo" id="cargo" >
             </label>
 
             <label>            
                     <spam>Telefone</spam></br> 
-                    <input type="tel" name="txt_telefonea" id="txt_telefonea">
+                    <input type="tel" name="telefonea" id="telefonea">
             </label>
 
             <label>            
                     <spam>Tipo</spam></br> 
-                    <select  name="txt_tipota" id="txt_tipota" >
+                    <select  name="tipota" id="tipota" >
                             <option value="selecione">Selecione</option>
                             <option value="Residencial">Residencial</option>
                             <option value="Comercial">Comercial</option>
@@ -144,12 +144,12 @@
 
             <label>            
                     <spam>Email</spam></br> 
-                    <input type="email" name="txt_emaila" id="txt_emaila">
+                    <input type="email" name="emaila" id="emaila">
             </label>
 
             <label>            
                     <spam>Tipo</spam></br> 
-                    <select  name="txt_tipoea" id="txt_tipoea">
+                    <select  name="tipoea" id="tipoea">
                             <option value="selecione">Selecione</option>
                             <option value="Residencial">Pessoal</option>
                             <option value="Comercial">Comercial</option>
@@ -176,12 +176,12 @@
 
                 <label>            
                         <spam>Numero</spam></br> 
-                        <input type="text" name="txt_numero" id="txt_numero" >
+                        <input type="text" name="numero" id="numero" >
                 </label>
 
                 <label>            
                         <spam>Complemento</spam></br> 
-                        <input type="text" name="txt_complemento" id="txt_complemento">
+                        <input type="text" name="complemento" id="complemento">
                 </label>
 
                 <label>            
@@ -191,26 +191,26 @@
 
                 <label>            
                         <spam>Ponto de Referencia </spam></br> 
-                        <input type="text" name="txt_pontoreferencia" id="txt_pontoreferencia" >
+                        <input type="text" name="pontoreferencia" id="pontoreferencia" >
                 </label>
 
                 <label>            
                         <spam>UF</spam></br> 
-                        <select name="uf" id="uf" disabled data-target="#cidade">
+                        <select name="uf" id="uf"  data-target="#cidade">
                                         <option value="">Estado</option>
                                     </select>        
                 </label>
 
                 <label>            
                         <spam>Cidade</spam></br> 
-                        <select  name="txt_cidade" id="cidade" disabled >
+                        <select  name="cidade" id="cidade"  >
                                 <option value="selecione">Selecione</option>
                         </select>        
                 </label>
 
                 <label>            
                         <spam>Condominio</spam></br> 
-                        <select  name="txt_Condominio" id="txt_Condominio" >
+                        <select  name="condominio" id="condominio" >
                                 <option value="selecione">Selecione</option>
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
@@ -224,7 +224,7 @@
         <fieldset>
                 <legend>Observação</legend>
                 <label>            
-                        <input type="text" name="txt_observacao" id="txt_observacao" >
+                        <input type="text" name="observacao" id="observacao" >
                 </label>
                 
            

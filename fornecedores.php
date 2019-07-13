@@ -33,7 +33,7 @@
                 <td ><?php echo $item['razaosocial']?></td>
                 <td><?php echo $item['nomefantasia']?></td>
                 <td><?php echo $item['cnpj']?></td>
-                <td><?php echo $item['situacao']?></td>
+                <td><?php echo $item['ativo']?></td>
                 <td>
                      <a href="index.php?link=11&id_fornecedores=<?php echo $item['id_fornecedores'];?>">    Editar </a>
                      <a href="CRUD/excluir.php?id_fornecedores=<?php echo $item['id_fornecedores'];?>">    Excluir </a>

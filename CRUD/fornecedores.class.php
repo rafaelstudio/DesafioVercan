@@ -1,5 +1,4 @@
 <?php
-//ESTE NÂO ESTA FUNCIONANDO, IR ATE 'OP_FORCENCEDORES'
     class Fornecedores{
 
         private $pdo;
@@ -9,65 +8,45 @@
         }
 
         public function adicionar(   
-            $cnpj,
-            $razaosocial = '',
-            $nomefantasia= '',
-            $indicador= '',
-            $inscricaoestadual= '',
-            $inscricaomunicipal= '',
-            $sitsituacao= '',
-            $recolhimento= '',
-            $ativo= '',
-            $telefone = '',
-            $tipot= '',
-            $email= '',
-            $tipoe= '',
-            $nomea= '',
-            $empresa= '',
-            $cargo= '',
-            $telefonea= '',
-            $tipota= '',
-            $emaila= '',
-            $tipoea= '',
-            $cep= '',
-            $logradouro= '',
-            $numero= '',
-            $complemento= '',
-            $bairro= '',
-            $pontoreferencia= '',
-            $uf= '',
-            $cidade= '',
-            $condominio= '',
-            $observacao= ''
-            //$cpf= '',
-            //$nome= '',
-           // $apelido= ''
-
+            $cnpj,$razaosocial,$nomefantasia,$indicador,$inscricaomunicipal,$inscricaoestadual,$situacao,
+            $recolhimento,$ativo,$telefone,$tipot,$email,$tipoe,$nomea,$empresa,$cargo,$telefonea,
+            $tipota,$emaila,$tipoea,$cep,$rua,$numero,$complemento,$bairro,$pontoreferencia,$uf,
+            $cidade,$condominio,$observacao
 
         ){
-            if($this->existeCnpj($cnpj) == false){
-                $sql = "INSERT INTO fornecedores (
-                    cnpj,razaosocial,nomefantasia,indicador,
-                    inscricaoestadual,inscricaomunicipal,situacao,recolhimento,ativo,telefone,tipot,email,tipoe,
+            if($this->existeCnpj($cnpj) == false){               
 
-                ) VALUES (
-                    :cnpj,:razaosocial,:nomefantasia,:indicador,
-                    :inscricaoestadual,:inscricaomunicipal,:situacao,:recolhimento,:ativo,:telefone,:tipot,:email,:tipoe,
-                    :nomea,:empresa,:cargo,:telefonea,:tipota,:emaila,:tipoea,:cep,:logradouro,
-                    :numero,:complemento,:bairro,:pontoreferencia,:uf,:cidade,:condominio,:observacao
-                )";
-                $sql = $this->pdo->prepare($sql);
+                $sql = $this->pdo->prepare("INSERT INTO fornecedores SET
+                cnpj = :cnpj,razaosocial = :razaosocial,nomefantasia = :nomefantasia,indicador =:indicador,
+                inscricaomunicipal=:inscricaomunicipal,inscricaoestadual =:inscricaoestadual,
+                situacao=:situacao,recolhimento=:recolhimento,ativo=:ativo,telefone=:telefone,tipot=:tipot,
+                email=:email,tipoe=:tipoe,nomea=:nomea,empresa=:empresa,cargo=:cargo,
+                telefonea=:telefonea,tipota=:tipota,emaila=:emaila,tipoea=:tipoea,cep=:cep,rua=:rua,
+                numero=:numero,complemento=:complemento,bairro=:bairro,pontoreferencia=:pontoreferencia,
+                uf=:uf,cidade=:cidade,condominio=:condominio,observacao=:observacao");
+
                 $sql->bindValue(':cnpj',$cnpj);
                 $sql->bindValue(':razaosocial',$razaosocial);
                 $sql->bindValue(':nomefantasia',$nomefantasia);
                 $sql->bindValue(':indicador',$indicador);
-                $sql->bindValue(':inscricaoestadual',$inscricaoestadual);
                 $sql->bindValue(':inscricaomunicipal',$inscricaomunicipal);
-                $sql->bindValue(':sitsituacao',$sitsituacao);
+                $sql->bindValue(':inscricaoestadual',$inscricaoestadual);
+                $sql->bindValue(':situacao',$situacao);
                 $sql->bindValue(':recolhimento',$recolhimento);
+                $sql->bindValue(':ativo',$ativo);
                 $sql->bindValue(':telefone',$telefone);
+                $sql->bindValue(':tipot',$tipot);
                 $sql->bindValue(':email',$email);
                 $sql->bindValue(':tipoe',$tipoe);
+                $sql->bindValue(':nomea',$nomea);
+                $sql->bindValue(':empresa',$empresa);
+                $sql->bindValue(':cargo',$cargo);
+                $sql->bindValue(':telefonea',$telefonea);
+                $sql->bindValue(':tipota',$tipota);
+                $sql->bindValue(':emaila',$emaila);
+                $sql->bindValue(':tipoea',$tipoea);
+                $sql->bindValue(':cep',$cep);
+                $sql->bindValue(':rua',$rua);
                 $sql->bindValue(':numero',$numero);
                 $sql->bindValue(':complemento',$complemento);
                 $sql->bindValue(':bairro',$bairro);
@@ -77,6 +56,8 @@
                 $sql->bindValue(':condominio',$condominio);
                 $sql->bindValue(':observacao',$observacao);
                 $sql->execute();
+
+                return true;
 
             }else{
                 return false;
@@ -111,7 +92,7 @@
         }
 
         public function editar($razaosocial,$id_fornecedores){
-                if($this->existe($cnpj) == false ){
+                if($this->existeCnpj($cnpj) == false ){
                 $sql = "UPDATE fornecedores SET rezaosocial = :razaosocial WHERE id_fornecedores = :id_fornecedores";
                 $sql = $this->pdo->prepare($sql);
                 $sql->bindValue(':razaosocial',$razaosocial);
