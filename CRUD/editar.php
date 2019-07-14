@@ -70,16 +70,16 @@
                 <label>            
                         <spam>Recolhimento</spam></br> 
                         <select  name="recolhimento" id="recolhimento"  >
-                                <option value="selecione"><?php echo $info['recolhimento'];?></option>
-                                <option value="recolher">A Recolher pelo Prestador</option>
-                                <option value="retido">Retido pelo Tomador</option>
+                                <option value="<?php echo $info['recolhimento'];?>"><?php echo $info['recolhimento'];?></option>
+                                <option >A Recolher pelo Prestador</option>
+                                <option >Retido pelo Tomador</option>
                         </select>
                 </label>
 
                 <label>            
                         <spam>Ativo</spam></br> 
                         <select  name="ativo" id="ativo"  >
-                                <option value="selecione"><?php echo $info['ativo'];?></option>
+                                <option value="<?php echo $info['ativo'];?>"><?php echo $info['ativo'];?></option>
                                 <option >Sim</option>
                                 <option >Não</option>
                         </select>
@@ -100,10 +100,10 @@
             <label>            
                     <spam>Tipo</spam></br> 
                     <select  name="tipot" id="tipot"  >
-                            <option value="selecione"><?php echo $info['tipot'];?></option>
-                            <option value="Residencial">Residencial</option>
-                            <option value="Comercial">Comercial</option>
-                            <option value="Celular">Celular</option>
+                            <option value="<?php echo $info['tipot'];?>"><?php echo $info['tipot'];?></option>
+                            <option >Residencial</option>
+                            <option >Comercial</option>
+                            <option >Celular</option>
                     </select>
             </label>
 
@@ -115,10 +115,10 @@
             <label>            
                     <spam>Tipo</spam></br> 
                     <select  name="tipoe" id="tipoe" >
-                            <option value="selecione"><?php echo $info['tipoe'];?></option>
-                            <option value="Residencial">Pessoal</option>
-                            <option value="Comercial">Comercial</option>
-                            <option value="Outro">Outro</option>
+                            <option value="<?php echo $info['tipoe'];?>"><?php echo $info['tipoe'];?></option>
+                            <option >Pessoal</option>
+                            <option >Comercial</option>
+                            <option >Outro</option>
                     </select>
             </label>
     
@@ -151,7 +151,7 @@
             <label>            
                     <spam>Tipo</spam></br> 
                     <select  name="tipota" id="tipota"  >
-                            <option value="selecione"><?php echo $info['tipota'];?></option>
+                            <option value="<?php echo $info['tipota'];?>"><?php echo $info['tipota'];?></option>
                             <option value="Residencial">Residencial</option>
                             <option value="Comercial">Comercial</option>
                             <option value="Celular">Celular</option>
@@ -166,7 +166,7 @@
             <label>            
                     <spam>Tipo</spam></br> 
                     <select  name="tipoea" id="tipoea"  >
-                            <option value="selecione"><?php echo $info['tipoea'];?></option>
+                            <option value="<?php echo $info['tipoea'];?>"><?php echo $info['tipoea'];?></option>
                             <option value="Residencial">Pessoal</option>
                             <option value="Comercial">Comercial</option>
                             <option value="Outro">Outro</option>
@@ -227,9 +227,9 @@
                 <label>            
                         <spam>Condominio</spam></br> 
                         <select  name="condominio" id="condominio" >
-                                <option value="selecione"><?php echo $info['condominio'];?></option>
-                                <option value="sim">Sim</option>
-                                <option value="nao">Não</option>
+                                <option value="<?php echo $info['condominio'];?>"><?php echo $info['condominio'];?></option>
+                                <option >Sim</option>
+                                <option >Não</option>
                         </select>        
                 </label>
            

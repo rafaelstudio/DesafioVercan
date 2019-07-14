@@ -92,7 +92,9 @@
         }
 
         public function editar($cnpj,$razaosocial,$nomefantasia,$indicador,$inscricaoestadual,
-        $inscricaomunicipal,$situacao,$recolhimento,$ativo,$telefone,$tipot,  $id_fornecedores){
+        $inscricaomunicipal,$situacao,$recolhimento,$ativo,$telefone,$tipot,$tipoe,$nomea,$empresa,$cargo,
+        $telefonea,$tipota,$emaila,$tipoea,$cep,$rua,$numero,$complemento,
+        $bairro,$pontoreferencia,$uf,$cidade,$condominio,$observacao,$id_fornecedores){
                 if($this->existeCnpj($cnpj) == false ){                
                     $sql = $this->pdo->prepare("UPDATE fornecedores SET cnpj = :cnpj,
                                                 razaosocial =:razaosocial,
@@ -104,7 +106,25 @@
                                                 recolhimento=:recolhimento,
                                                 ativo=:ativo,
                                                 telefone=:telefone,
-                                                tipot=:tipot
+                                                tipot=:tipot,
+                                                tipoe=:tipoe,
+                                                nomea=:nomea,
+                                                empresa=:empresa,
+                                                cargo=:cargo,
+                                                telefonea=:telefonea,
+                                                tipota=:tipota,
+                                                emaila=:emaila,
+                                                tipoea=:tipoea,
+                                                cep=:cep,
+                                                rua=:rua,
+                                                numero=:numero,
+                                                complemento=:complemento,
+                                                bairro=:bairro,
+                                                pontoreferencia=:pontoreferencia,
+                                                uf=:uf,
+                                                cidade=:cidade,
+                                                condominio=:condominio,
+                                                observacao=:observacao
                     
                     
                     
@@ -120,6 +140,26 @@
                     $sql->bindValue(':ativo',$ativo);
                     $sql->bindValue(':telefone',$telefone);
                     $sql->bindValue(':tipot',$tipot);
+                    $sql->bindValue(':tipoe',$tipoe);
+                    $sql->bindValue(':nomea',$nomea);
+                    $sql->bindValue(':empresa',$empresa);
+                    $sql->bindValue(':cargo',$cargo);
+                    $sql->bindValue(':telefonea',$telefonea);
+                    $sql->bindValue(':tipota',$tipota);
+                    $sql->bindValue(':emaila',$emaila);
+                    $sql->bindValue(':tipoea',$tipoea);
+                    $sql->bindValue(':cep',$cep);
+                    $sql->bindValue(':rua',$rua);
+                    $sql->bindValue(':numero',$numero);
+                    $sql->bindValue(':complemento',$complemento);
+                    $sql->bindValue(':bairro',$bairro);
+                    $sql->bindValue(':pontoreferencia',$pontoreferencia);
+                    $sql->bindValue(':uf',$uf);
+                    $sql->bindValue(':cidade',$cidade);
+                    $sql->bindValue(':condominio',$condominio);
+                    $sql->bindValue(':observacao',$observacao);
+
+                    
 
 
                     $sql->bindValue(':id_fornecedores',$id_fornecedores);
