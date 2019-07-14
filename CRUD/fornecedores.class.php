@@ -91,13 +91,20 @@
                 }
         }
 
-        public function editar($cnpj,$razaosocial,$nomefantasia,$indicador,$inscricaoestadual,  $id_fornecedores){
+        public function editar($cnpj,$razaosocial,$nomefantasia,$indicador,$inscricaoestadual,
+        $inscricaomunicipal,$situacao,$recolhimento,$ativo,$telefone,$tipot,  $id_fornecedores){
                 if($this->existeCnpj($cnpj) == false ){                
                     $sql = $this->pdo->prepare("UPDATE fornecedores SET cnpj = :cnpj,
                                                 razaosocial =:razaosocial,
                                                 nomefantasia=:nomefantasia,
                                                 indicador=:indicador,
-                                                inscricaoestadual=:inscricaoestadual
+                                                inscricaoestadual=:inscricaoestadual,
+                                                inscricaomunicipal=:inscricaomunicipal,
+                                                situacao=:situacao,
+                                                recolhimento=:recolhimento,
+                                                ativo=:ativo,
+                                                telefone=:telefone,
+                                                tipot=:tipot
                     
                     
                     
@@ -107,6 +114,14 @@
                     $sql->bindValue(':nomefantasia',$nomefantasia);
                     $sql->bindValue(':indicador',$indicador);
                     $sql->bindValue(':inscricaoestadual',$inscricaoestadual);
+                    $sql->bindValue(':inscricaomunicipal',$inscricaomunicipal);
+                    $sql->bindValue(':situacao',$situacao);
+                    $sql->bindValue(':recolhimento',$recolhimento);
+                    $sql->bindValue(':ativo',$ativo);
+                    $sql->bindValue(':telefone',$telefone);
+                    $sql->bindValue(':tipot',$tipot);
+
+
                     $sql->bindValue(':id_fornecedores',$id_fornecedores);
                     $sql->execute();
                         return true;
