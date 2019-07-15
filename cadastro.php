@@ -242,7 +242,6 @@ integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous"></script>
 <Script>
         $(document).ready(function() {
-
 function limpa_formulário_cep() {
     // Limpa valores do formulário de cep.
     $("#rua").val("");
@@ -301,7 +300,71 @@ $("#cep").blur(function() {
     }
 });
 });
+/////////////////////////////////////////////////////////////////////////////////
+$(document).ready(function() {
 
+function limpa_formulário_cnpj() {
+    // Limpa valores do formulário de cnpj.
+    $("#razaosocial").val("");
+    $("#nomefantasia").val("");
+    $("#indicador").val("");
+    $("#inscricaoestadual").val("");
+    $("#inscricaomunicipal").val("");
+    $("#situacao").val("");
+    $("#recolhimento").val("");
+    $("#ativo").val("");
+}
+
+//Quando o campo cnpj perde o foco.
+$("#cnpj").blur(function() {
+
+    //Nova variável "cnpj" somente com dígitos.
+        var cnpj = $(this).val().replace(/\D/g,"");
+
+    //Verifica se campo cnpj possui valor informado.
+    if (cnpj != "") {
+
+        //Expressão regular para validar o CNPJ.
+        var validacnpj = /^[0-9]/;
+
+        //Valida o formato do CNPJ.
+        if(validacnpj.test(cnpj)) {
+
+            //Preenche os campos com "..." enquanto consulta webservice.
+        
+        $("#razaosocial").val("...");
+        $("#nomefantasia").val("...");
+        $("#indicador").val("...");
+        $("#situacao").val("...");
+            $.getJSON("//receitaws.com.br/v1/cnpj/"+cnpj+"/?callback=?", function(dados) {
+
+                if (!("erro" in dados)) {
+                    //Atualiza os campos com os valores da consulta.
+                        $("#razaosocial").val(dados.nome);
+                        $("#nomefantasia").val(dados.fantasia);
+                        $("#situacao").val(dados.situacao); 
+
+
+                } //end if.
+                else {
+                    //Cnpj pesquisado não foi encontrado.
+                    limpa_formulário_cnpj();
+                    alert("CNPJ não encontrado.");
+                }
+            });
+        } //end if.
+        else {
+            //cnpj é inválido.
+            limpa_formulário_cnpj();
+            alert("Formato de CNPJ inválido.");
+        }
+    } //end if.
+    else {
+        //cnpj sem valor, limpa formulário.
+        limpa_formulário_cnpj();
+    }
+});
+});
 
 
 ////////////////////////////////////////////////////////////////////////////////
