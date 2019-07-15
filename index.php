@@ -14,6 +14,10 @@
         $info = $sql->fetch();
       }else{
         header("Location: login.php");
+        
+
+		    
+
       exit;
       }
 
